@@ -13,12 +13,13 @@ import authRoutes from "./routes/auth.routes.js";
 import listingRoutes from "./routes/listing.routes.js";
 
 const allowedOrigins = [
-  "http://localhost:5173", // for dev
+  "http://localhost:5173", // dev
+  "https://home-linker-realestate.vercel.app", // deployed frontend
 ];
 app.use(
   cors({
-    origin: allowedOrigins, // allow all origins
-    credentials: true, // cannot use `true` with "*"
+    origin: allowedOrigins,
+    credentials: true,
   })
 );
 mongoose
