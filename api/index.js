@@ -37,6 +37,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/listing", listingRoutes);
 
+app.get("/", (req, res) => {
+  res.send({ message: "Hello from Express on Vercel!" });
+});
 app.use((err, req, res, next) => {
   console.error("Caught Error:", err);
   const statusCode = err.statusCode || 500;
